@@ -1,0 +1,47 @@
+{
+  "command": [
+    "/home/alp/Projects/github/yoked-plasticity/.venv/bin/yoked-plasticity",
+    "--config",
+    "configs/smoke.json",
+    "--output",
+    "results/sentinel-v2-b"
+  ],
+  "completed_pairs": 1,
+  "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+  "finished_utc": "2026-09-07T20:17:00.011170+00:00",
+  "intervention": "injection",
+  "max_rss_bytes": 42369024,
+  "max_rss_scope": "process lifetime high-water mark",
+  "numerical_run_success": true,
+  "phase": "smoke",
+  "schema_version": 1,
+  "scientific_gate": "stop",
+  "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+  "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+  "source_sha256": {
+    "yoked_plasticity/__init__.py": "dccc153a56807a6744043964053899304bef50c0fb8fc45453f1eed23431e74f",
+    "yoked_plasticity/cli.py": "d8dbb062f1625d0023860f6e122b3c1d00f0b9c7a89e2c0ea4edcd79efd75adb",
+    "yoked_plasticity/env.py": "a0979de6961a6de7479b8359af3f4258810a7f12142822277d024209d86911b7",
+    "yoked_plasticity/experiment.py": "fc6c9efac3201991b23899042b24653fd9d9a89b1fec83d8ca5764a1c47ed46b",
+    "yoked_plasticity/learner.py": "594235aad9d34856b9cad83246aa3e1688c88ff9e1bbf1c120c06c32911b2b70",
+    "yoked_plasticity/tabular.py": "ec39354f63451287efe22509ed298a67a31798629f197e53670f54cf3d83026d"
+  },
+  "started_utc": "2026-09-07T20:16:59.372700+00:00",
+  "status": "success",
+  "thread_settings": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "versions": {
+    "machine": "x86_64",
+    "numpy": "2.3.5",
+    "platform": "Linux-7.1.13-200.fc44.x86_64-x86_64-with-glibc2.43",
+    "python": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+    "python_implementation": "CPython"
+  },
+  "walltime_seconds": 0.6385070290000385
+}

@@ -1,0 +1,528 @@
+{
+  "bootstrap": {
+    "confidence": 0.95,
+    "method": "percentile",
+    "replicates": 10000,
+    "seed": 0
+  },
+  "gate_details": {
+    "conditional_reversal_pass": false,
+    "eligible_phase_and_intervention": false,
+    "hidden_opportunity_pass": false,
+    "interpretation": "advance permits the next calibration stage, not a positive research conclusion",
+    "name": "frozen preliminary GO gate",
+    "reversal_switches": [],
+    "thresholds": {
+      "clean_gain": 0.1,
+      "excess_clean_gain": 0.05,
+      "hidden_data_fraction_of_total": 0.3333333333333333,
+      "hidden_generated_data_effect": 0.05,
+      "hidden_total_effect": 0.05,
+      "reversal_minimum_absolute_gain": 0.05,
+      "reversal_minimum_gap": 0.15
+    },
+    "visible_or_mixed_clean_pass": false
+  },
+  "interval_label": "exploratory",
+  "intervention": "injection",
+  "max_rss_bytes": 42369024,
+  "max_rss_scope": "process lifetime high-water mark",
+  "numerical_run_success": true,
+  "pair_count": 1,
+  "phase": "smoke",
+  "research_status": "preliminary calibration only; not a positive research claim",
+  "schema_version": 1,
+  "scientific_gate": "stop",
+  "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+  "statistical_unit": "structural_seed; learner initializations averaged within cluster",
+  "status": "success",
+  "switches": {
+    "hidden_opportunity": {
+      "clean_gain": {
+        "ci95": [
+          -0.18004961651826726,
+          -0.18004961651826726
+        ],
+        "mean": -0.18004961651826726,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.18004961651826726
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.18004961651826726
+          }
+        ]
+      },
+      "conditional_learner_gain_A": {
+        "ci95": [
+          -0.17898292054647313,
+          -0.17898292054647313
+        ],
+        "mean": -0.17898292054647313,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.17898292054647313
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.17898292054647313
+          }
+        ]
+      },
+      "conditional_learner_gain_I": {
+        "ci95": [
+          -0.17898292054647313,
+          -0.17898292054647313
+        ],
+        "mean": -0.17898292054647313,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.17898292054647313
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.17898292054647313
+          }
+        ]
+      },
+      "excess_clean_gain": {
+        "ci95": [
+          -0.17924134689015522,
+          -0.17924134689015522
+        ],
+        "mean": -0.17924134689015522,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.17924134689015522
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.17924134689015522
+          }
+        ]
+      },
+      "generated_data_effect": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0
+          }
+        ]
+      },
+      "interaction": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0
+          }
+        ]
+      },
+      "learner_state_effect": {
+        "ci95": [
+          -0.17898292054647313,
+          -0.17898292054647313
+        ],
+        "mean": -0.17898292054647313,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.17898292054647313
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.17898292054647313
+          }
+        ]
+      },
+      "total_effect": {
+        "ci95": [
+          -0.17898292054647313,
+          -0.17898292054647313
+        ],
+        "mean": -0.17898292054647313,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.17898292054647313
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.17898292054647313
+          }
+        ]
+      }
+    },
+    "mixed": {
+      "clean_gain": {
+        "ci95": [
+          0.0008109924060555676,
+          0.0008109924060555676
+        ],
+        "mean": 0.0008109924060555676,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0008109924060555676
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0008109924060555676
+          }
+        ]
+      },
+      "conditional_learner_gain_A": {
+        "ci95": [
+          0.0010813232080740878,
+          0.0010813232080740878
+        ],
+        "mean": 0.0010813232080740878,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0010813232080740878
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0010813232080740878
+          }
+        ]
+      },
+      "conditional_learner_gain_I": {
+        "ci95": [
+          0.0005406616040370404,
+          0.0005406616040370404
+        ],
+        "mean": 0.0005406616040370404,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0005406616040370404
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0005406616040370404
+          }
+        ]
+      },
+      "excess_clean_gain": {
+        "ci95": [
+          0.0008109924060555676,
+          0.0008109924060555676
+        ],
+        "mean": 0.0008109924060555676,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0008109924060555676
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0008109924060555676
+          }
+        ]
+      },
+      "generated_data_effect": {
+        "ci95": [
+          0.0002703308020185237,
+          0.0002703308020185237
+        ],
+        "mean": 0.0002703308020185237,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0002703308020185237
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0002703308020185237
+          }
+        ]
+      },
+      "interaction": {
+        "ci95": [
+          -0.0005406616040370474,
+          -0.0005406616040370474
+        ],
+        "mean": -0.0005406616040370474,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.0005406616040370474
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.0005406616040370474
+          }
+        ]
+      },
+      "learner_state_effect": {
+        "ci95": [
+          0.0008109924060555641,
+          0.0008109924060555641
+        ],
+        "mean": 0.0008109924060555641,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0008109924060555641
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0008109924060555641
+          }
+        ]
+      },
+      "total_effect": {
+        "ci95": [
+          0.0010813232080740878,
+          0.0010813232080740878
+        ],
+        "mean": 0.0010813232080740878,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0010813232080740878
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0010813232080740878
+          }
+        ]
+      }
+    },
+    "visible_refit": {
+      "clean_gain": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0
+          }
+        ]
+      },
+      "conditional_learner_gain_A": {
+        "ci95": [
+          0.0009960181015234368,
+          0.0009960181015234368
+        ],
+        "mean": 0.0009960181015234368,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0009960181015234368
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0009960181015234368
+          }
+        ]
+      },
+      "conditional_learner_gain_I": {
+        "ci95": [
+          0.0019981218533616785,
+          0.0019981218533616785
+        ],
+        "mean": 0.0019981218533616785,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0019981218533616785
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0019981218533616785
+          }
+        ]
+      },
+      "excess_clean_gain": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0
+          }
+        ]
+      },
+      "generated_data_effect": {
+        "ci95": [
+          -0.0005010518759191208,
+          -0.0005010518759191208
+        ],
+        "mean": -0.0005010518759191208,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": -0.0005010518759191208
+              }
+            ],
+            "structural_seed": 9,
+            "value": -0.0005010518759191208
+          }
+        ]
+      },
+      "interaction": {
+        "ci95": [
+          0.0010021037518382417,
+          0.0010021037518382417
+        ],
+        "mean": 0.0010021037518382417,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0010021037518382417
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0010021037518382417
+          }
+        ]
+      },
+      "learner_state_effect": {
+        "ci95": [
+          0.0014970699774425576,
+          0.0014970699774425576
+        ],
+        "mean": 0.0014970699774425576,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0014970699774425576
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0014970699774425576
+          }
+        ]
+      },
+      "total_effect": {
+        "ci95": [
+          0.0009960181015234368,
+          0.0009960181015234368
+        ],
+        "mean": 0.0009960181015234368,
+        "structural_cluster_count": 1,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 33,
+                "value": 0.0009960181015234368
+              }
+            ],
+            "structural_seed": 9,
+            "value": 0.0009960181015234368
+          }
+        ]
+      }
+    }
+  },
+  "walltime_seconds": 0.636860858999853
+}

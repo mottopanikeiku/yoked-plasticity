@@ -1,0 +1,138 @@
+{
+  "artifact_audits": [
+    {
+      "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/sentinel-a",
+      "scientific_gate": "stop",
+      "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+      "source_binding_sha256": "15b0ae34365b1bbca874c8e6c4bf1367c975833a1851a12c697e88d9a743fe0d",
+      "verified_artifact_count": 8
+    },
+    {
+      "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/sentinel-b",
+      "scientific_gate": "stop",
+      "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+      "source_binding_sha256": "15b0ae34365b1bbca874c8e6c4bf1367c975833a1851a12c697e88d9a743fe0d",
+      "verified_artifact_count": 8
+    },
+    {
+      "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/sentinel-v2-a",
+      "scientific_gate": "stop",
+      "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+      "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+      "verified_artifact_count": 8
+    },
+    {
+      "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/sentinel-v2-b",
+      "scientific_gate": "stop",
+      "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+      "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+      "verified_artifact_count": 8
+    },
+    {
+      "config_sha256": "bb75661b47f20ed23653062e35fe146110d2b86f50d859ab5f2b43b1253a11ae",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/development-a",
+      "scientific_gate": "stop",
+      "semantic_sha256": "76dc1abca488880e2fbfda00d5d8702bfce725b15bc2bc4d00c2ad708e9819f7",
+      "source_binding_sha256": "15b0ae34365b1bbca874c8e6c4bf1367c975833a1851a12c697e88d9a743fe0d",
+      "verified_artifact_count": 28
+    },
+    {
+      "config_sha256": "ebd98f46e55243ec324dd6790876519ae9898709110c9cd8ee6d8bba8c922e95",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/development-b",
+      "scientific_gate": "stop",
+      "semantic_sha256": "af6fe0e80b06e4ffdec3075deb23173da59a4a9c1bd99588198b7e6b618fcb35",
+      "source_binding_sha256": "15b0ae34365b1bbca874c8e6c4bf1367c975833a1851a12c697e88d9a743fe0d",
+      "verified_artifact_count": 28
+    },
+    {
+      "config_sha256": "bb75661b47f20ed23653062e35fe146110d2b86f50d859ab5f2b43b1253a11ae",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/development-a-v2",
+      "scientific_gate": "stop",
+      "semantic_sha256": "76dc1abca488880e2fbfda00d5d8702bfce725b15bc2bc4d00c2ad708e9819f7",
+      "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+      "verified_artifact_count": 28
+    },
+    {
+      "config_sha256": "ebd98f46e55243ec324dd6790876519ae9898709110c9cd8ee6d8bba8c922e95",
+      "ok": true,
+      "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/development-b-v2",
+      "scientific_gate": "stop",
+      "semantic_sha256": "af6fe0e80b06e4ffdec3075deb23173da59a4a9c1bd99588198b7e6b618fcb35",
+      "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+      "verified_artifact_count": 28
+    }
+  ],
+  "behavioral_suite": {
+    "command": "uv run --frozen python -m unittest discover -s tests",
+    "exit_code": 0,
+    "passed": 66
+  },
+  "build": {
+    "artifacts": {
+      ".gitignore": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1",
+      "yoked_plasticity-0.1.0-py3-none-any.whl": "40b77f14fe0cb96a500c98afcf2ebda3cff7a7ab3efaf40115af10657aa7ed92",
+      "yoked_plasticity-0.1.0.tar.gz": "1088ced7b783a328da83074553bd5ea2745473709ad04144d89d137dcc156d4b"
+    },
+    "artifacts_disposable": true,
+    "command": "uv build",
+    "exit_code": 0
+  },
+  "current_source_sentinel_comparison": {
+    "comparison_equal": true,
+    "ok": true,
+    "runs": [
+      {
+        "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+        "ok": true,
+        "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/sentinel-v2-a",
+        "scientific_gate": "stop",
+        "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+        "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+        "verified_artifact_count": 8
+      },
+      {
+        "config_sha256": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+        "ok": true,
+        "run_dir": "/home/alp/Projects/github/yoked-plasticity/results/sentinel-v2-b",
+        "scientific_gate": "stop",
+        "semantic_sha256": "c00093528cdf7dceda07e9c3f6d9e7fab250fdd4ad4080a1c0a9a9f19bd65a73",
+        "source_binding_sha256": "79058f47fda74bab472c5d7a4a96523d50224943d7970c39c519c6725d4d9d12",
+        "verified_artifact_count": 8
+      }
+    ],
+    "scientific_gate": "stop",
+    "verified_artifact_count": 16
+  },
+  "fixed_configuration_revalidation": [
+    {
+      "configuration": "a",
+      "scientific_semantics_unchanged": true,
+      "semantic_sha256": "76dc1abca488880e2fbfda00d5d8702bfce725b15bc2bc4d00c2ad708e9819f7",
+      "source_binding_changed_for_guard_only": true
+    },
+    {
+      "configuration": "b",
+      "scientific_semantics_unchanged": true,
+      "semantic_sha256": "af6fe0e80b06e4ffdec3075deb23173da59a4a9c1bd99588198b7e6b618fcb35",
+      "source_binding_changed_for_guard_only": true
+    }
+  ],
+  "heldout_executed": false,
+  "initial_score_regression": {
+    "failed_before_fix": true,
+    "passed_after_fix": true,
+    "repair_commit": "6d1dbb6"
+  },
+  "paid_compute_used": false
+}

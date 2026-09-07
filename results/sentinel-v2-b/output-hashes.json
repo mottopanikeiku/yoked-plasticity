@@ -1,0 +1,16 @@
+{
+  "algorithm": "sha256",
+  "excludes": [
+    "output-hashes.json"
+  ],
+  "files": {
+    "checkpoint-9-33.npz": "0f0de6727db5bcb106d58272a5b1379aad21a452d94f0235039ae4bfaf3ffee4",
+    "config.json": "cff8c53f5cd35e005a60b2c6f9b68c46b88ccf6106128fa9c31e7775c4734727",
+    "manifest.json": "9017dfd1e0e0cf927b1d98bd771a383d237ab2d9cc6b8b81c298f435258744ed",
+    "results.jsonl": "734d7e72da87e10d675368e5f4afdd5c5fe09e659dc52add93d382b7060dc05d",
+    "summary.json": "2f4b345a0c669d6108d41cfbcaca097e0332f3d9cb9fbe62454bd0e300a2c9dd",
+    "tapes-9-33-hidden_opportunity.npz": "e9457222a7351c595f92fcc7e232a9010687f16323d5ab3557cc01dd2156093e",
+    "tapes-9-33-mixed.npz": "ef0979799604084afe2c680cbc1e8e17f7e19d2474e9423fcf2ec6634845390a",
+    "tapes-9-33-visible_refit.npz": "91b2273803a1b28f59f1ad7d037b2e6aa8598d3b59b82c0dec8f136b31aa8c42"
+  }
+}

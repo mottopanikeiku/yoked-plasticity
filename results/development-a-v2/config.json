@@ -1,0 +1,22 @@
+{
+  "phase": "development",
+  "structural_seeds": [101, 202, 303],
+  "learner_seeds": [11, 22],
+  "switches": ["visible_refit", "hidden_opportunity", "mixed"],
+  "intervention": "injection",
+  "observation_dim": 32,
+  "hidden": 64,
+  "learning_rate": 0.0003,
+  "gamma": 0.97,
+  "replay_capacity": 512,
+  "batch_size": 32,
+  "epsilon": 0.1,
+  "update_every": 4,
+  "target_every": 250,
+  "age_steps": 80000,
+  "block_steps": 2000,
+  "adapt_steps": 5000,
+  "evaluate_every": 250,
+  "restart_steps": 1000,
+  "recent_keep": 128
+}

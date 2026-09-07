@@ -1,0 +1,20 @@
+{
+  "counts": {
+    "all_training_transition_exposures": 2310023,
+    "derived_initial_equivalence_check_forward_examples": 240,
+    "evaluation_network_forward_examples": 83160,
+    "evaluation_simulator_interactions": 25278,
+    "exact_reference_transition_queries": 648,
+    "frozen_network_forward_examples": 14215290,
+    "instrumented_network_forward_examples": 48604693,
+    "neural_optimizer_updates": 434454,
+    "neural_sampled_replay_items": 13902528,
+    "reused_consumer_transition_exposures": 810000,
+    "tabular_minibatch_updates": 142460,
+    "tabular_sampled_replay_items": 4558720,
+    "training_simulator_interactions": 1500023
+  },
+  "notes": "A network-forward example counts one observation evaluated by one MLP, not a FLOP estimate. Initial equivalence-check work is derived separately from the frozen runner; all other forward counts are instrumented. Tabular updates are not neural optimizer steps. Consumer reuse is not new simulator experience.",
+  "pair_count": 6,
+  "run": "development-a-v2"
+}
