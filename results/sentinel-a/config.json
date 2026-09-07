@@ -1,0 +1,22 @@
+{
+  "phase": "smoke",
+  "structural_seeds": [9],
+  "learner_seeds": [33],
+  "switches": ["visible_refit", "hidden_opportunity", "mixed"],
+  "intervention": "injection",
+  "observation_dim": 32,
+  "hidden": 16,
+  "learning_rate": 0.0003,
+  "gamma": 0.97,
+  "replay_capacity": 64,
+  "batch_size": 16,
+  "epsilon": 0.1,
+  "update_every": 4,
+  "target_every": 250,
+  "age_steps": 512,
+  "block_steps": 128,
+  "adapt_steps": 256,
+  "evaluate_every": 64,
+  "restart_steps": 64,
+  "recent_keep": 32
+}
