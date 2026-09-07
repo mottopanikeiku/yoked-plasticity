@@ -1,0 +1,36 @@
+{
+  "algorithm": "sha256",
+  "excludes": [
+    "output-hashes.json"
+  ],
+  "files": {
+    "checkpoint-101-11.npz": "a3eb1f653334d9f66be8080fdd8376913462cdebb3c548b389cdd010a954a4c3",
+    "checkpoint-101-22.npz": "b152ba40a0fde39b8a4cc0c9d262ba9c00f5a01ad0c9e28b15a1b635b063260f",
+    "checkpoint-202-11.npz": "f3f2fe6a63b606e674f5e299376d9e4672f57c20ac1d2b110fc1b6dee7965c42",
+    "checkpoint-202-22.npz": "29a4fa33bd987b6b13278135826005278468537ea143eed7b8895cc3c761959f",
+    "checkpoint-303-11.npz": "4be6d2c7e26eed67af33f38f97ebe563b23e01e72748674df8d26565cea6393a",
+    "checkpoint-303-22.npz": "6a3105323bc62c9801c8844d84c63e6be242d6fec9257651c6312c0fdb3c30fd",
+    "config.json": "ebd98f46e55243ec324dd6790876519ae9898709110c9cd8ee6d8bba8c922e95",
+    "manifest.json": "bdc3bde9871e0534876ef63066ba48bc1e1a601a7d9f396d3a8b926b1fce833d",
+    "results.jsonl": "b22cb2a3a20b9c88f70e3bc16f18fc8a2122082c7b3b2d0fc655f1a3d5b0732d",
+    "summary.json": "2c647541856b888c5f65ad74e5cb709afb28bf5fcd352f420ac311c3ce97448f",
+    "tapes-101-11-hidden_opportunity.npz": "755a82c8b53b9feb1c31c205d369bcaaf624fdf26c84a9bd55ee088d191835db",
+    "tapes-101-11-mixed.npz": "5fecd98422257d56cf303a2f4906cf9c6462c5cfa003e11b6e6d18ab9b319b91",
+    "tapes-101-11-visible_refit.npz": "63fb62414e69e2e2f922330e8c8d951c254a531ba46f30cc6392896497722d29",
+    "tapes-101-22-hidden_opportunity.npz": "edb144a1753efa6876d6d6135d8817643de4ec23217d596358558af245df9d98",
+    "tapes-101-22-mixed.npz": "c328e286e37a06d2d630a93065782bb431ffbf71c3c1fdb3ebf479078f4d9ec0",
+    "tapes-101-22-visible_refit.npz": "328bd15ea6335f19819148747cbc77ba40d0debb8e82006ab63a6c28de820933",
+    "tapes-202-11-hidden_opportunity.npz": "9a4ffe22d53f936f98531690c58a930b3a272981fcadcfaac7b550fd8c3dcbe8",
+    "tapes-202-11-mixed.npz": "db75e9a1c3d3dcae3f93f3a15d40a9d773f53704f2c341be65a592ea595bbcd8",
+    "tapes-202-11-visible_refit.npz": "b7c38627580aeb6704b2fee2167f69bbea383828b5823a820cddc517abf44423",
+    "tapes-202-22-hidden_opportunity.npz": "6bf2a9dee36b7b6f6327a5d9ad1a4ad1a03083dbeafaceb832454ff9f14ac7b5",
+    "tapes-202-22-mixed.npz": "3f7f53890f298415f7461e6f31f58a3ee1c410936f1c1a6924385e473b4589d7",
+    "tapes-202-22-visible_refit.npz": "1b9cec875f1c267b0a35be713d78ee5e1b52c8d1fbcdb7554db6955cbf1f434d",
+    "tapes-303-11-hidden_opportunity.npz": "2431b68db7328ba66958e33ec305f3a8569251823e7b4bc80b008cd7347443a3",
+    "tapes-303-11-mixed.npz": "04a37dfe3443e8ee5999f6620bda213e6cb0de9f269ab76a163d26dd4c26c371",
+    "tapes-303-11-visible_refit.npz": "7b4d770876d499e8835c4df381aa6b143a1ca0655f96541db7668d1123fcf622",
+    "tapes-303-22-hidden_opportunity.npz": "b0455bb38f9fce1a091bad2d0a1d8c2d46a4271434a4ca7020b97c65ab1afd2a",
+    "tapes-303-22-mixed.npz": "80c7598e6188fa2b88ca92c87aa799f837ec9f33a28149533ba3d637f3663cee",
+    "tapes-303-22-visible_refit.npz": "af3242bba7fe71225d0d34e3c4aefdabf707770877bd1245c999cf05ae67c388"
+  }
+}

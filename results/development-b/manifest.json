@@ -1,0 +1,47 @@
+{
+  "command": [
+    "/home/alp/Projects/github/yoked-plasticity/.venv/bin/yoked-plasticity",
+    "--config",
+    "configs/development-b.json",
+    "--output",
+    "results/development-b"
+  ],
+  "completed_pairs": 6,
+  "config_sha256": "ebd98f46e55243ec324dd6790876519ae9898709110c9cd8ee6d8bba8c922e95",
+  "finished_utc": "2026-09-07T20:04:31.618654+00:00",
+  "intervention": "injection",
+  "max_rss_bytes": 62902272,
+  "max_rss_scope": "process lifetime high-water mark",
+  "numerical_run_success": true,
+  "phase": "development",
+  "schema_version": 1,
+  "scientific_gate": "stop",
+  "semantic_sha256": "af6fe0e80b06e4ffdec3075deb23173da59a4a9c1bd99588198b7e6b618fcb35",
+  "source_binding_sha256": "15b0ae34365b1bbca874c8e6c4bf1367c975833a1851a12c697e88d9a743fe0d",
+  "source_sha256": {
+    "yoked_plasticity/__init__.py": "dccc153a56807a6744043964053899304bef50c0fb8fc45453f1eed23431e74f",
+    "yoked_plasticity/cli.py": "d8dbb062f1625d0023860f6e122b3c1d00f0b9c7a89e2c0ea4edcd79efd75adb",
+    "yoked_plasticity/env.py": "a0979de6961a6de7479b8359af3f4258810a7f12142822277d024209d86911b7",
+    "yoked_plasticity/experiment.py": "e285740856a78c01d251502ae2e278919803a4097d86a5214ea5485383e17f42",
+    "yoked_plasticity/learner.py": "594235aad9d34856b9cad83246aa3e1688c88ff9e1bbf1c120c06c32911b2b70",
+    "yoked_plasticity/tabular.py": "ec39354f63451287efe22509ed298a67a31798629f197e53670f54cf3d83026d"
+  },
+  "started_utc": "2026-09-07T20:02:07.816493+00:00",
+  "status": "success",
+  "thread_settings": {
+    "BLIS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "versions": {
+    "machine": "x86_64",
+    "numpy": "2.3.5",
+    "platform": "Linux-7.1.13-200.fc44.x86_64-x86_64-with-glibc2.43",
+    "python": "3.14.7 (main, Aug 10 2026, 00:00:00) [GCC 16.1.1 20260515 (Red Hat 16.1.1-2)]",
+    "python_implementation": "CPython"
+  },
+  "walltime_seconds": 143.802201673
+}
