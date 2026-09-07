@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this research software if you use its experiments."
+title: "Yoked Plasticity: Tape-Dependent Intervention Reversals"
+type: software
+authors:
+  - family-names: "mottopanikeiku"
+repository-code: "https://github.com/mottopanikeiku/yoked-plasticity"
+license: MIT
+version: 0.1.0

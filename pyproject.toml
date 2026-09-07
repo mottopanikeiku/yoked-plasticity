@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yoked-plasticity"
+version = "0.1.0"
+description = "Replay-controlled continual-RL experiments on tape-dependent intervention reversals"
+requires-python = ">=3.14,<3.15"
+dependencies = ["numpy==2.3.5"]
+license = "MIT"
+authors = [{name = "mottopanikeiku"}]
+
+[project.scripts]
+yoked-plasticity = "yoked_plasticity.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/yoked_plasticity"]
