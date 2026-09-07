@@ -46,6 +46,16 @@ class ReplayIntegrityTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             consume(model, replay, replace(tape, rows=corrupted), world, context, cfg, diagonal=True)
 
+    def test_initial_diagonal_score_corruption_is_rejected(self):
+        cfg = config()
+        world = World(9, observation_dim=8)
+        model, replay, context, counts = age(world, 11, cfg)
+        tape = generate(model, replay, world, context, cfg, 73, counts["optimizer_updates"])
+        changed_initial = {**tape.scores[0], "return": tape.scores[0]["return"] + 1.0}
+        corrupted = replace(tape, scores=[changed_initial, *tape.scores[1:]])
+        with self.assertRaises(AssertionError):
+            consume(model, replay, corrupted, world, context, cfg, diagonal=True)
+
     def test_serialized_checkpoint_preserves_exact_learning_continuation(self):
         cfg = config()
         world = World(9, observation_dim=8)

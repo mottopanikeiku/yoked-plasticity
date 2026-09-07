@@ -197,6 +197,8 @@ def consume(model, replay, tape, world, context, config, *, diagonal=False):
     model, replay = model.clone(), replay.clone()
     initial_work = (model.forward_examples, model.frozen_forward_examples)
     score, eval_calls = evaluate(model, world, context, 0)
+    if diagonal and score != tape.scores[0]:
+        raise AssertionError("initial diagonal evaluation diverged")
     evaluation_forward = model.forward_examples - initial_work[0]
     scores = [score]
     update_index = 0
