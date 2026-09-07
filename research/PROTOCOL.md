@@ -90,4 +90,10 @@ If the permitted branch still fails, stop the positive thesis and preserve the n
 
 CPU only; no GPU, model endpoint, paid service, or external training data. Single-thread BLAS settings are bound before NumPy imports. Record actual aging interactions, six post-switch actor streams per switch, all consumer optimizer updates, tabular minibatch updates, evaluation simulator interactions, exact-reference transition queries, network forwards, wall time, and peak RSS. Do not count reused consumer transitions as newly generated environment experience.
 
-Each run directory is exclusive and immutable after completion. Numerical completion and scientific acceptance are separate fields. Partial results and traceback remain on failure. Source hashes, exact config bytes, dependency lock, code revision where available, runtime versions, output hashes, and semantic result digest support reuse; no artifact authorizes a claim whose upstream gate failed.
+Each run directory is exclusive and immutable after completion. Numerical completion and scientific acceptance are separate fields. Partial results and traceback remain on failure. Manifests bind package-source hashes, exact config bytes, runtime versions, output hashes and semantic result digests. The dependency lock and Git history are repository-level context: manifests do not embed a Git revision or hash/copy uv.lock. No artifact authorizes a claim whose upstream gate failed.
+
+## Post-execution review clarifications
+
+These clarify implementation and interpretation; no gate, seed, budget or scientific setting changed. The single learning_rate controls both aging and adaptation, so A versus B does not isolate an effect of aging itself. Diagonal equality proves deterministic replay through shared code, not independently correct Double-DQN mathematics; numerical gradient/terminal tests provide separate checks.
+
+Review found that the original guard compared every post-initial scheduled evaluation but omitted the step-zero comparison. The repaired source adds that missing assertion. The existing two configurations are re-executed in new `development-a-v2` and `development-b-v2` directories solely to validate the stronger integrity contract; these are not new search configurations or independent scientific samples. Original outputs remain unchanged.
