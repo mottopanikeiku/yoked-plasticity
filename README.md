@@ -1,74 +1,52 @@
 # Yoked Plasticity
 
-**A continual-reinforcement-learning study of tape-dependent intervention reversals.**
+This is a small NumPy reinforcement-learning experiment testing whether a plasticity intervention's benefit depends on the experience used to train it.
 
-Question: can an initially output-preserving plasticity intervention help when trained on one learner's generated experience but hurt on the other's? The experiment crosses actual Double-DQN learner states with both chronological behavior tapes, rather than attributing every autonomous return gain to restored plasticity.
+**Question:** can an intervention help on one learner's experience but hurt on another's?
 
-**Launch result: the proposed positive thesis did not survive the bounded development protocol.** Both six-pair configurations completed numerically; neither passed the required material sign-reversal gate. The one permitted learning-rate adjustment was used. Held-out evaluation remains closed. This repository preserves the implementation, raw evidence and exact stopping decision—not a claim of a new RL breakthrough.
+The [Double DQN implementation](src/yoked_plasticity/learner.py) uses float64 arithmetic and independently implements the published Plasticity Injection method, preserving initial online and target predictions. A [synthetic two-branch task](src/yoked_plasticity/env.py) changes its hidden context during training. The [experiment](src/yoked_plasticity/experiment.py) crosses aged and injected learners with both chronological experience tapes, alongside exploration, replay, optimizer-reset and learned tabular controls.
 
-## Result in brief
+**Result: the original experiment did not find the material tape-dependent sign reversal it was designed to test.** Injection sometimes helped substantially, but that is not a new algorithm or evidence of isolated intrinsic plasticity.
 
-Three structural worlds × two initializations per configuration; visible, hidden-opportunity and mixed switches. Means use structural clusters, with exploratory uncertainty rather than treating every rollout as independent.
+## Results
 
-| Configuration | Clean response gate | Hidden-data gate | Reversal gate | Decision |
-| --- | --- | --- | --- | --- |
-| A: learning rate 0.0003 | Fail | Pass | Fail | Stop |
-| B: learning rate 0.001 | Pass | Fail | Fail | Stop |
+The [development report](reports/development.md) contains the original measurements below. Each learning-rate setting used three structural seeds crossed with two learner initializations. AUC is normalized discounted greedy-return area under the adaptation curve; gains are injected minus aged learner AUC on the same tape.
 
-B produced a substantial hidden-opportunity injection benefit: total normalized adaptation-AUC gain **0.38832**, with learner-state allocation **0.38752** and generated-data allocation **0.00080**. That is meaningful learning evidence, but not the new tape-dependent reversal the thesis required. Initial A/B used **3,000,049 training simulator interactions**; integrity re-execution used the same amount, for **6,000,098** across those runs, CPU only. Small sentinels and consumer replay reuse are accounted separately.
+| Setting | Switch | Gain on aged tape | Gain on injected tape | Autonomous injection gain | Tabular AUC |
+| --- | --- | ---: | ---: | ---: | ---: |
+| A: 0.0003 | Visible | -0.02068 | -0.19874 | -0.03309 | 0.43179 |
+| A: 0.0003 | Hidden | -0.05230 | 0.00701 | 0.05470 | 0.95188 |
+| A: 0.0003 | Mixed | 0.04102 | 0.06644 | 0.13148 | 0.98272 |
+| B: 0.001 | Visible | -0.07437 | -0.04319 | 0.01458 | 0.43179 |
+| B: 0.001 | Hidden | 0.33450 | 0.44054 | 0.38832 | 0.95188 |
+| B: 0.001 | Mixed | 0.30259 | 0.40336 | 0.37433 | 0.98272 |
 
-Read the [full report](reports/development.md), [claim ledger](research/CLAIMS.md), and [decision history](research/DECISIONS.md). The negative development result does not establish a universal null.
+A's hidden gains have opposite signs, but the positive gain is too small to meet the original reversal criterion. B's hidden and mixed gains are positive on both tapes. Both settings failed the original combined screening criteria; the original held-out experiment was not run. The learned tabular baseline nearly solves hidden and mixed adaptation.
 
-## What runs
+A [separate exploratory check](reports/additional-seeds.md) added structural seeds 404, 505 and 606 at B's learning rate. Hidden tape-conditioned gains were 0.33251 and 0.45349; tabular hidden/mixed AUCs were 0.97594/0.98702. No aggregate switch met the original reversal criterion, but two individual seed/initialization combinations did. This is heterogeneous evidence, not a general null or a held-out confirmation.
 
-- A procedural, hidden-context sequential-control environment with two actions and five-decision episodes.
-- Float64 NumPy Double DQN: two 64-unit ReLU layers, Huber TD loss, Adam, target network and epsilon-greedy exploration.
-- Whole-network output-preserving [Plasticity Injection](https://arxiv.org/abs/2305.15555), preserving both initial online and lagged target functions.
-- Complete aged/injected learner × aged/injected actor-tape crossing, plus fresh learners on each tape.
-- Optimizer-reset-only clean-tape calibration; epsilon restart; rolling recent replay; independently learned tabular control.
-- Exact discounted control evaluation, absolute replay UIDs, per-update diagonal fingerprints, serialized checkpoints and raw tapes.
-- Immutable runs, cluster-level summaries, artifact auditing and reproducible compute accounting.
+## Reproduce
 
-Only observations and ordinary transitions reach the learner. Context codes, oracle policies and evaluation results never enter replay. This is actual RL learning, not a systems benchmark with RL terminology.
-
-## Quick start
-
-Requires Python 3.14 and [uv](https://docs.astral.sh/uv/). No GPU, model endpoint, paid API or external dataset.
+Use Python 3.14 and [uv](https://docs.astral.sh/uv/); dependencies are pinned in [uv.lock](uv.lock). From the repository root:
 
 ```sh
 uv sync --frozen --python /usr/bin/python3
-uv run --frozen yoked-plasticity --config configs/smoke.json --output runs/my-smoke
-uv run --frozen python -m unittest discover -s tests -v
+nice -n 19 uv run --frozen yoked-plasticity --config configs/development-b.json --output runs/reproduce-b
+sh scripts/run_seed_check.sh runs/reproduce-additional-seeds
 ```
 
-The CLI refuses an existing output directory. Use a new directory for each execution. The smoke configuration exercises real learning and every crossover/control path, but cannot authorize a scientific advance.
+Output directories must be new. Local CPU only; no GPU, external dataset or paid service. Original development settings took about 125–144 seconds each and less than 63 MB peak process memory on the recorded machine ([resource measurements](reports/development.md#actual-resource-use)); runtime varies by CPU. The CLI limits BLAS to one thread. The seed-check script runs the additional configuration and audits its outputs.
 
-Audit the published evidence without retraining:
+Tests: `nice -n 19 uv run --frozen python -m unittest discover -s tests -v`. Historical protocols, decisions and detailed reproduction notes are kept in [docs/HANDOFF.md](docs/HANDOFF.md).
 
-```sh
-uv run --frozen python scripts/verify_artifacts.py results/sentinel-v2-a --compare results/sentinel-v2-b
-uv run --frozen python scripts/verify_artifacts.py results/development-a-v2
-uv run --frozen python scripts/verify_artifacts.py results/development-b-v2
-uv run --frozen python scripts/summarize_work.py results/development-b-v2
-```
+## Limitations
 
-Exact development reproduction commands and runtime caveats are in [HANDOFF.md](HANDOFF.md). Reproduction does not authorize another search configuration or create independent scientific samples.
+- One small synthetic task family, not an Atari or real-world benchmark.
+- Only three structural clusters per original setting; uncertainty intervals are exploratory.
+- The learning rate affects aging and adaptation, so A/B does not isolate aging.
+- Tabular control has a favorable representation; neither its success nor neural failure establishes a general ranking.
+- Shared-code replay consistency is not independent algorithm verification; numerical gradient and terminal-target tests provide separate checks.
 
-## Novelty boundary
+## Prior work and attribution
 
-[Tandem RL (2021)](https://arxiv.org/abs/2110.14020) already separates active data generation from passive learning with identical ordered batches. [Plasticity Injection (2023)](https://arxiv.org/abs/2305.15555) already supplies the intervention and recognizes exploration confounding. [AltNet (2026)](https://arxiv.org/abs/2512.01034) already trains reset passive networks on active trajectories and studies replay/reset interactions.
-
-The intended residual contribution was a consequential tape-conditional sign reversal that a one-way comparison cannot reveal. A four-cell table, a symmetric allocation, ordinary coverage effects, or an injection benefit alone are not novel contributions. The initial experiment did not clear that boundary. See [THESIS.md](research/THESIS.md) for the candidate comparison and hostile-review conclusions.
-
-## Research operating model
-
-- [Protocol](research/PROTOCOL.md): frozen estimands, seed split, gates, controls and bounded adjustment.
-- [Dependency graph](research/GRAPH.md): sole writers, exact inputs/outputs, acceptance and stop propagation.
-- [Research loops](research/LOOPS.md): goal → action → observation → one justified adjustment.
-- [Successor handoff](HANDOFF.md): executable baseline, evidence map and explicit closed branches.
-
-Numerical success is separate from scientific acceptance. Failed prerequisites block downstream positive claims. Current status: preserve the negative result; do not open held-out worlds or continue tuning under protocol v1.
-
-## License and authorship
-
-MIT. Sole human author: **mottopanikeiku (alp)**. Published algorithms and dependencies retain their attribution; see [NOTICE.md](NOTICE.md) and [CITATION.cff](CITATION.cff).
+[Tandem RL](https://arxiv.org/abs/2110.14020) motivates separating data generation from passive learning. [Plasticity Injection](https://arxiv.org/abs/2305.15555) supplies the intervention. [AltNet](https://arxiv.org/abs/2512.01034) studies reset passive networks on active trajectories and replay interactions. These methods are independently implemented, not invented here; no upstream implementation is vendored. MIT license; author: [Alp Cetin](https://github.com/mottopanikeiku). See [NOTICE.md](NOTICE.md).

@@ -20,11 +20,11 @@ flowchart TD
 
 | Node | Objective and exact inputs | Sole output owner and outputs | Acceptance | Downstream evidence |
 | --- | --- | --- | --- | --- |
-| N0 | Corrected RL mandate; closest sources linked in THESIS.md | Research lead: research/THESIS.md | Genuine RL question; excluded-project overlap removed; Tandem/AltNet collision explicit | Permits only the narrow reversal question, not novelty priority |
-| N1 | N0; research/PROTOCOL.md; configs/development.json | Integration lead: src/, tests/, pyproject.toml, uv.lock | Actual learner, oracle-separated simulator, frozen gates, no paid execution | Defines exact treatment and numerical semantics |
+| N0 | Corrected RL mandate; closest sources linked in THESIS.md | Research lead: docs/research/THESIS.md | Genuine RL question; excluded-project overlap removed; Tandem/AltNet collision explicit | Permits only the narrow reversal question, not novelty priority |
+| N1 | N0; docs/research/PROTOCOL.md; configs/development.json | Integration lead: src/, tests/, pyproject.toml, uv.lock | Actual learner, oracle-separated simulator, frozen gates, no paid execution | Defines exact treatment and numerical semantics |
 | N2 | N1 source; configs/smoke.json | Verification lead: two sentinel directories and reports/verification.json | Behavioral regressions; exact semantic sentinel reproduction; all diagonal traces checked | Permits development, not a positive RL result |
 | N3 | N2; frozen configuration A and code | One experiment runner: results/development-a only | Every planned pair completed; artifact audit passes; all raw curves and gates retained | Supplies development A gate values |
-| N4 | N3's immutable summary and protocol adjustment rule | Research lead: research/DECISIONS.md | State cause before action; no threshold change; no hidden data access | Authorizes at most the specified LR-only B, or stops |
+| N4 | N3's immutable summary and protocol adjustment rule | Research lead: docs/research/DECISIONS.md | State cause before action; no threshold change; no hidden data access | Authorizes at most the specified LR-only B, or stops |
 | N5 | Authorized N4; configuration B differing only in learning_rate | One experiment runner: results/development-b only | Same six pairs, same frozen gates, verified artifacts | Supplies final bounded-development decision |
 | N6 | Passing N3 or N5; verified config/code/input/output bindings | Research lead: locked config and decision record | All three preliminary gates pass; structural/learner seeds disjoint; code and core settings unchanged | Authorizes locked evaluation only |
 | N7 | N6; frozen locked configuration; passing prerequisite run | One experiment runner: one new held-out run directory | Complete planned grid; integrity audit; interval-supported opposing effects assessed explicitly | Evidence about held-out reversal in this small family |
@@ -46,7 +46,7 @@ A matching checkpoint is not permission to reuse its conclusion under a differen
 
 ## Stop propagation
 
-Any failed integrity node blocks all scientific descendants until a diagnosed engineering repair is verified. Any failed final development scientific gate blocks N6–N9. It does not erase N0–N5 or make their negative measurements invalid. The final launch state and exact successor action live in HANDOFF.md and DECISIONS.md; this file defines the graph rather than inventing completed nodes.
+Any failed integrity node blocks all scientific descendants until a diagnosed engineering repair is verified. Any failed final development scientific gate blocks N6–N9. It does not erase N0–N5 or make their negative measurements invalid. The final launch state and exact successor action live in ../HANDOFF.md and DECISIONS.md; this file defines the graph rather than inventing completed nodes.
 
 ## Final launch state
 

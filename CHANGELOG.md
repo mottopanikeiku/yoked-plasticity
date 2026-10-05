@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Rewrote the README around the question, measured results and reproduction commands.
+- Moved historical protocols and handoff notes into `docs/`, and artifact auditing/accounting into `tools/`; kept the launch outputs and behavior tests.
+- Added a separately planned structural-seed check with configuration B unchanged apart from the new structural seeds. Aggregate means missed the material reversal criterion; two individual seed/initialization combinations met its sign and magnitude conditions. Preserved full outputs and reported the heterogeneity.
+
 ## 0.1.0
 
 - Implemented actual CPU Double-DQN continual-control experiments, output-preserving injection, crossed chronological replay, clean-data and tabular controls.

@@ -10,7 +10,7 @@ import tempfile
 import unittest
 
 
-VERIFIER = Path(__file__).resolve().parents[1] / "scripts" / "verify_artifacts.py"
+VERIFIER = Path(__file__).resolve().parents[1] / "tools" / "verify_artifacts.py"
 
 
 def canonical(value):
