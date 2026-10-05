@@ -24,7 +24,7 @@ The clean gate now passes: visible clean I-A/I-O are 0.24372/0.16256. However, h
 
 Final decision: the bounded development branch is complete and does not support the proposed positive thesis. Preserve both runs, publish their negative gate outcomes, and keep held-out execution blocked. The permitted adjustment has been consumed. A third configuration, new seed search, or threshold change is not authorized by this protocol.
 
-The substantial B injection benefit remains a valid exploratory observation, not a novel reversal result and not proof of isolated intrinsic plasticity. See reports/development.md and research/CLAIMS.md for exact scope.
+The substantial B injection benefit remains a valid exploratory observation, not a novel reversal result and not proof of isolated intrinsic plasticity. See reports/development.md and docs/research/CLAIMS.md for exact scope.
 
 ## D3 — integrity review and fixed-configuration revalidation
 

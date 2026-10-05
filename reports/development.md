@@ -72,7 +72,7 @@ The tabular comparator nearly solves hidden/mixed adaptation. The toy family is 
 | Manifest wall time | 125.13 s | 143.80 s |
 | Peak resident memory, process lifetime | 62,554,112 bytes | 62,902,272 bytes |
 
-Initial A/B used **3,000,049 training simulator interactions**, with reused transitions counted separately. Integrity-only v2 re-execution used another 3,000,049, totaling **6,000,098** across development and its verification. No GPU or paid service was used. A network-forward example is one observation processed by one MLP, not a FLOP count. Injection's frozen forwards are included, not treated as free. scripts/summarize_work.py regenerates work-a.json/work-b.json and work-a-v2.json/work-b-v2.json; all scientific work counts match between versions. The table's wall times and memory are from the original runs. Small sentinel runs are additional and excluded from this development total.
+Initial A/B used **3,000,049 training simulator interactions**, with reused transitions counted separately. Integrity-only v2 re-execution used another 3,000,049, totaling **6,000,098** across development and its verification. No GPU or paid service was used. A network-forward example is one observation processed by one MLP, not a FLOP count. Injection's frozen forwards are included, not treated as free. tools/summarize_work.py regenerates work-a.json/work-b.json and work-a-v2.json/work-b-v2.json; all scientific work counts match between versions. The table's wall times and memory are from the original runs. Small sentinel runs are additional and excluded from this development total.
 
 ## Provenance
 
@@ -89,3 +89,7 @@ Independent artifact checks passed for all eight preserved directories. Both A a
 The experiment produced meaningful RL learning, including a substantial output-preserving injection benefit in B. It did **not** produce the stronger discovery needed to distinguish this project from Tandem RL and AltNet. An ordinary injection benefit and a generated-data component in A are already anticipated by the closest literature.
 
 Stop the launch's positive thesis. Keep held-out worlds closed. Do not claim that plasticity interventions never reverse, that intrinsic plasticity was isolated, or that the null generalizes beyond this bounded family. A new scientific direction would need a new explicit protocol and renewed novelty argument, not additional seeds or relaxed gates under this one.
+
+## Later exploratory work
+
+A separately planned [additional structural-seed check](additional-seeds.md) leaves this original stopping decision and all launch outputs unchanged. It is not a continuation of the original protocol or its held-out test.

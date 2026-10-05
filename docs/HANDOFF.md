@@ -2,7 +2,7 @@
 
 ## Start here
 
-Canonical checkout: `/home/alp/Projects/github/yoked-plasticity`.
+Historical launch checkout: `/home/alp/Projects/github/yoked-plasticity` (not required for reproduction; use your own clone).
 Public repository: `https://github.com/mottopanikeiku/yoked-plasticity`.
 Sole human author: mottopanikeiku (alp). MIT; main branch. Preserve sole-author Git metadata and do not add coauthor/bot trailers.
 
@@ -11,12 +11,12 @@ Sole human author: mottopanikeiku (alp). MIT; main branch. Preserve sole-author 
 Read, in order:
 
 1. README.md — result and exact entry points.
-2. research/THESIS.md — candidate selection, strongest collisions and scope.
-3. research/PROTOCOL.md — frozen design, estimands, gates and budgets.
-4. research/DECISIONS.md — A failure, pre-B authorization, final stop.
+2. docs/research/THESIS.md — candidate selection, strongest collisions and scope.
+3. docs/research/PROTOCOL.md — original design, estimands, gates and budgets.
+4. docs/research/DECISIONS.md — A failure, pre-B authorization, final stop.
 5. reports/development.md — cells, controls, uncertainty and actual work.
-6. research/CLAIMS.md — supported observations versus unestablished claims.
-7. research/GRAPH.md and research/LOOPS.md — dependencies, ownership and bounded iteration.
+6. docs/research/CLAIMS.md — supported observations versus unestablished claims.
+7. docs/research/GRAPH.md and docs/research/LOOPS.md — historical dependencies and bounded iteration.
 
 ## What is actually implemented
 
@@ -37,17 +37,17 @@ Python 3.14; pinned NumPy 2.3.5. Use the repo-local environment, not host packag
 
 ```sh
 uv sync --frozen --python /usr/bin/python3
-uv run --frozen python -m unittest discover -s tests -v
-uv run --frozen python scripts/verify_artifacts.py results/sentinel-v2-a --compare results/sentinel-v2-b
-uv run --frozen python scripts/verify_artifacts.py results/development-a-v2
-uv run --frozen python scripts/verify_artifacts.py results/development-b-v2
-uv run --frozen python scripts/summarize_work.py results/development-b-v2
+nice -n 19 uv run --frozen python -m unittest discover -s tests -v
+nice -n 19 uv run --frozen python tools/verify_artifacts.py results/sentinel-v2-a --compare results/sentinel-v2-b
+nice -n 19 uv run --frozen python tools/verify_artifacts.py results/development-a-v2
+nice -n 19 uv run --frozen python tools/verify_artifacts.py results/development-b-v2
+nice -n 19 uv run --frozen python tools/summarize_work.py results/development-b-v2
 ```
 
 To exercise the actual CLI without a full research run:
 
 ```sh
-uv run --frozen yoked-plasticity --config configs/smoke.json --output runs/local-smoke
+nice -n 19 uv run --frozen yoked-plasticity --config configs/smoke.json --output runs/local-smoke
 ```
 
 That output directory must not already exist. Use a new descriptive name for a later invocation. The CLI fixes BLAS thread counts before NumPy imports.
@@ -55,10 +55,10 @@ That output directory must not already exist. Use a new descriptive name for a l
 For an explicit reproduction of frozen development evidence, the commands are:
 
 ```sh
-uv run --frozen yoked-plasticity --config configs/development.json --output runs/reproduce-a
-uv run --frozen python scripts/verify_artifacts.py results/development-a-v2 --compare runs/reproduce-a
-uv run --frozen yoked-plasticity --config configs/development-b.json --output runs/reproduce-b
-uv run --frozen python scripts/verify_artifacts.py results/development-b-v2 --compare runs/reproduce-b
+nice -n 19 uv run --frozen yoked-plasticity --config configs/development.json --output runs/reproduce-a
+nice -n 19 uv run --frozen python tools/verify_artifacts.py results/development-a-v2 --compare runs/reproduce-a
+nice -n 19 uv run --frozen yoked-plasticity --config configs/development-b.json --output runs/reproduce-b
+nice -n 19 uv run --frozen python tools/verify_artifacts.py results/development-b-v2 --compare runs/reproduce-b
 ```
 
 Reproduction is an integrity check, not an additional independent sample or permission to search another setting. Exact semantic equality is demonstrated on the launch runtime, not promised across different CPU/BLAS builds. Read runtime versions in the manifests before interpreting a cross-machine mismatch.
@@ -88,3 +88,7 @@ First verify the preserved artifacts and read the stop decision. **Do not run he
 If a future research mandate explicitly reopens this direction, first write a new protocol that explains what new mechanism could escape the Tandem/AltNet collision and why the existing negative result does not settle that different question. It must specify its own cheap falsifier before new learning. Do not silently rebrand that as continuation of the successful launch experiment.
 
 Independent read-only literature work or artifact auditing may run concurrently. One owner writes each new experiment directory; one integrator owns aggregate outputs. Existing unrelated repositories remain untouched. No paid compute is authorized by this handoff.
+
+## Separate exploratory extension
+
+The later [additional-seed plan](seed-check.md) checks the negative result on three more development worlds with configuration B unchanged apart from structural seeds. It does not revise this historical stopping decision, lower thresholds, run the original locked-test worlds, or claim a confirmatory result. New outputs are separate from the launch evidence.
