@@ -1,0 +1,1296 @@
+{
+  "bootstrap": {
+    "confidence": 0.95,
+    "method": "percentile",
+    "replicates": 10000,
+    "seed": 0
+  },
+  "gate_details": {
+    "conditional_reversal_pass": false,
+    "eligible_phase_and_intervention": true,
+    "hidden_opportunity_pass": false,
+    "interpretation": "advance permits the next calibration stage, not a positive research conclusion",
+    "name": "frozen preliminary GO gate",
+    "reversal_switches": [],
+    "thresholds": {
+      "clean_gain": 0.1,
+      "excess_clean_gain": 0.05,
+      "hidden_data_fraction_of_total": 0.3333333333333333,
+      "hidden_generated_data_effect": 0.05,
+      "hidden_total_effect": 0.05,
+      "reversal_minimum_absolute_gain": 0.05,
+      "reversal_minimum_gap": 0.15
+    },
+    "visible_or_mixed_clean_pass": true
+  },
+  "interval_label": "exploratory",
+  "intervention": "injection",
+  "max_rss_bytes": 62013440,
+  "max_rss_scope": "process lifetime high-water mark",
+  "numerical_run_success": true,
+  "pair_count": 6,
+  "phase": "development",
+  "research_status": "preliminary calibration only; not a positive research claim",
+  "schema_version": 1,
+  "scientific_gate": "stop",
+  "semantic_sha256": "f0aa8179cb99d35c75a5d1044bd8e9c50333f77ebb95d13bd5679a1757de0ea6",
+  "statistical_unit": "structural_seed; learner initializations averaged within cluster",
+  "status": "success",
+  "switches": {
+    "hidden_opportunity": {
+      "clean_gain": {
+        "ci95": [
+          0.05943806835048837,
+          0.9249775866758624
+        ],
+        "mean": 0.5681555602540848,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8552155547557758
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.9947396185959491
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.9249775866758625
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8871662567558619
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.5529357947159446
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.7200510257359032
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.05943806835048837
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.05943806835048837
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.05943806835048837
+          }
+        ]
+      },
+      "conditional_learner_gain_A": {
+        "ci95": [
+          0.03396461048599331,
+          0.5264864678264644
+        ],
+        "mean": 0.33251192406334884,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.05297342781383829
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.8211959599413394
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.43708469387758886
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8729096521332262
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.18006328351970252
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.5264864678264644
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.06792922097198661
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.03396461048599331
+          }
+        ]
+      },
+      "conditional_learner_gain_I": {
+        "ci95": [
+          0.060368429237848686,
+          0.6640302957323265
+        ],
+        "mean": 0.4534888544130222,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.7656007751469196
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.5065349013908634
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.6360678382688916
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.6841194067215148
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.6439411847431383
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.6640302957323265
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.12073685847569737
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.060368429237848686
+          }
+        ]
+      },
+      "excess_clean_gain": {
+        "ci95": [
+          0.029719034175244186,
+          0.9249226023474194
+        ],
+        "mean": 0.5760894065462349,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8551055860988898
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.9947396185959491
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.9249226023474194
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8871662567558619
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.6600869094762205
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.7736265831160412
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.05943806835048837
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.029719034175244186
+          }
+        ]
+      },
+      "generated_data_effect": {
+        "ci95": [
+          -0.1514238331404447,
+          0.03442979092967352
+        ],
+        "mean": -0.08487517934101645,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.4091754581738958
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.1063277918930064
+              }
+            ],
+            "structural_seed": 404,
+            "value": -0.1514238331404447
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.09602003521006601
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.1792429564144903
+              }
+            ],
+            "structural_seed": 505,
+            "value": -0.13763149581227815
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.06885958185934704
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.03442979092967352
+          }
+        ]
+      },
+      "interaction": {
+        "ci95": [
+          0.02640381875185538,
+          0.19898314439130269
+        ],
+        "mean": 0.12097693034967343,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.7126273473330813
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.314661058550476
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.19898314439130266
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.1887902454117113
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.4638779012234358
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.13754382790586225
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.05280763750371076
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.02640381875185538
+          }
+        ]
+      },
+      "learner_state_effect": {
+        "ci95": [
+          0.047166519861921,
+          0.5952583817793955
+        ],
+        "mean": 0.39300038923818553,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.40928710148037895
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.6638654306661014
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.5365762660732402
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.7785145294273705
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.41200223413142045
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.5952583817793955
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.094333039723842
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.047166519861921
+          }
+        ]
+      },
+      "total_effect": {
+        "ci95": [
+          0.08159631079159452,
+          0.4576268859671173
+        ],
+        "mean": 0.30812520989716913,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.00011164330648316678
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.7701932225591078
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.3851524329327955
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.6824944942173046
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.2327592777169301
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.4576268859671173
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.16319262158318903
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.08159631079159452
+          }
+        ]
+      }
+    },
+    "mixed": {
+      "clean_gain": {
+        "ci95": [
+          0.24476457425624853,
+          0.5928116432491883
+        ],
+        "mean": 0.4187660193870821,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.1651075754668
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.6546367239792971
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.24476457425624853
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8388867263441198
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.34673656015425697
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.5928116432491883
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8376034097651973
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.0001597284535784782
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.4187218406558094
+          }
+        ]
+      },
+      "conditional_learner_gain_A": {
+        "ci95": [
+          0.01406705528556726,
+          0.8805797187787544
+        ],
+        "mean": 0.4378295179243408,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.2519376881920914
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.5857458712253104
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.4188417797087009
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8045191863421595
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.9566402512153493
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.8805797187787544
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.469125918880011
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.44099180830887647
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.01406705528556726
+          }
+        ]
+      },
+      "conditional_learner_gain_I": {
+        "ci95": [
+          -0.44104422778419167,
+          0.899822186370025
+        ],
+        "mean": 0.3962638583111156,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8804422260628202
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.579585006632207
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.7300136163475136
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8136272192946701
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.9860171534453799
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.899822186370025
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.15550629812219885
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.7265821574461845
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.44104422778419167
+          }
+        ]
+      },
+      "excess_clean_gain": {
+        "ci95": [
+          0.41882912493379626,
+          0.5837519624598246
+        ],
+        "mean": 0.4875428233417269,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.27385904803781086
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.6462357172253084
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.46004738263155964
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8381457180543228
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.32935820686532646
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.5837519624598246
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8378163810366352
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.00015813116904273006
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.41882912493379626
+          }
+        ]
+      },
+      "generated_data_effect": {
+        "ci95": [
+          -0.005341664834119602,
+          0.3165146610136821
+        ],
+        "mean": 0.14368676999896143,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.28883627740196044
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.04906164976731693
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.11988731381732176
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.004005121446776096
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.0146884511150153
+              }
+            ],
+            "structural_seed": 505,
+            "value": -0.005341664834119602
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.30882147681342054
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.3242078452139436
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.3165146610136821
+          }
+        ]
+      },
+      "interaction": {
+        "ci95": [
+          -0.45511128306975895,
+          0.31117183663881265
+        ],
+        "mean": -0.041565659613225225,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.6285045378707287
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.006160864593103346
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.31117183663881265
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.009108032952510656
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0293769022300306
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.01924246759127063
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.6246322170022098
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.2855903491373081
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.45511128306975895
+          }
+        ]
+      },
+      "learner_state_effect": {
+        "ci95": [
+          -0.21348858624931222,
+          0.8902009525743897
+        ],
+        "mean": 0.4170466881177282,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.5661899571274558
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.5826654389287587
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.5744276980281072
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8090732028184148
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.9713287023303646
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.8902009525743897
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.15680981037890607
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.5837869828775305
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.21348858624931222
+          }
+        ]
+      },
+      "total_effect": {
+        "ci95": [
+          0.10302607476436987,
+          0.88485928774027
+        ],
+        "mean": 0.5607334581166897,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8550262345294163
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.5336037891614418
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.6943150118454291
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.8130783242651909
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.9566402512153493
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.8848592877402701
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.4656312871923266
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.25957913766358687
+              }
+            ],
+            "structural_seed": 606,
+            "value": 0.10302607476436987
+          }
+        ]
+      }
+    },
+    "visible_refit": {
+      "clean_gain": {
+        "ci95": [
+          -0.1397793357395702,
+          0.44361180276311313
+        ],
+        "mean": 0.11151264404690626,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.3402053035380886
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.27879437330373685
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.030705465117175867
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.6080081214491054
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.2792154840771208
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.44361180276311313
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.3168532270666993
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.0372945555875589
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.1397793357395702
+          }
+        ]
+      },
+      "conditional_learner_gain_A": {
+        "ci95": [
+          -0.23597942018337772,
+          0.14380568177748404
+        ],
+        "mean": -0.021278250029689222,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.3978851945922357
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.34120721795858366
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.02833898831682602
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.1706094376799267
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.11700192587504141
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.14380568177748404
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.34089676594579077
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.13106207442096468
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.23597942018337772
+          }
+        ]
+      },
+      "conditional_learner_gain_I": {
+        "ci95": [
+          -0.29915307931691426,
+          0.3069411950405723
+        ],
+        "mean": 0.0899161192390362,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.4107839657462816
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.20309842433486303
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.3069411950405723
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.4376814149686043
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.08623906901829673
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.2619602419934505
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.40381904444559014
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.19448711418823836
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.29915307931691426
+          }
+        ]
+      },
+      "excess_clean_gain": {
+        "ci95": [
+          -0.1980201804018685,
+          0.22325092146803993
+        ],
+        "mean": 0.020741476738788938,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.36520078418202356
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.29121340588163286
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.03699368915019535
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.6080081214491054
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.16150627851302557
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.22325092146803993
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.42083953730165047
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.02479917649791355
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.19802018040186847
+          }
+        ]
+      },
+      "generated_data_effect": {
+        "ci95": [
+          -0.10778933150135424,
+          0.13717142834374796
+        ],
+        "mean": -0.024984222754338713,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.09986011490377217
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.11571854809893632
+              }
+            ],
+            "structural_seed": 404,
+            "value": -0.10778933150135425
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.1335359886443388
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.14080686804315715
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.13717142834374796
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.2396819081970386
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.031012377986218906
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.10433476510540984
+          }
+        ]
+      },
+      "interaction": {
+        "ci95": [
+          -0.06317365913353652,
+          0.2786022067237463
+        ],
+        "mean": 0.1111943692687254,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.012898771154045918
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.5443056422934467
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.2786022067237463
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.2670719772886776
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.03076285685674468
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.11815456021596646
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.06292227849979937
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.06342503976727368
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.06317365913353652
+          }
+        ]
+      },
+      "learner_state_effect": {
+        "ci95": [
+          -0.267566249750146,
+          0.20288296188546728
+        ],
+        "mean": 0.034318934604673494,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.40433458016925866
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.06905439681186032
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.16764009167869917
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.3041454263242655
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.10162049744666907
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.20288296188546728
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.37235790519569045
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.1627745943046015
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.267566249750146
+          }
+        ]
+      },
+      "total_effect": {
+        "ci95": [
+          -0.3719010148555559,
+          0.34005439022921524
+        ],
+        "mean": 0.009334711850334784,
+        "structural_cluster_count": 3,
+        "structural_clusters": [
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.3044744652654865
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.18477294491079663
+              }
+            ],
+            "structural_seed": 404,
+            "value": 0.05985076017734493
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": 0.4376814149686043
+              },
+              {
+                "learner_seed": 22,
+                "value": 0.2424273654898262
+              }
+            ],
+            "structural_seed": 505,
+            "value": 0.34005439022921524
+          },
+          {
+            "learner_seed_values": [
+              {
+                "learner_seed": 11,
+                "value": -0.6120398133927291
+              },
+              {
+                "learner_seed": 22,
+                "value": -0.1317622163183826
+              }
+            ],
+            "structural_seed": 606,
+            "value": -0.3719010148555558
+          }
+        ]
+      }
+    }
+  },
+  "walltime_seconds": 149.74642445601057
+}
