@@ -5,6 +5,8 @@
 - Rewrote the README around the question, measured results and reproduction commands.
 - Moved historical protocols and handoff notes into `docs/`, and artifact auditing/accounting into `tools/`; kept the launch outputs and behavior tests.
 - Added a separately planned structural-seed check with configuration B unchanged apart from the new structural seeds. Aggregate means missed the material reversal criterion; two individual seed/initialization combinations met its sign and magnitude conditions. Preserved full outputs and reported the heterogeneity.
+- Compared saved branch coverage and adaptation timing for both initializations in the two worlds with individual reversals. Preserved the original aggregate criteria and all saved training outputs.
+- Replaced successor-agent instructions with plain reproduction notes and added CPU-only CI for the learner and saved-data analysis.
 
 ## 0.1.0
 
