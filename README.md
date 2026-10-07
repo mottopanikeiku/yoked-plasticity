@@ -1,52 +1,50 @@
 # Yoked Plasticity
 
-This is a small NumPy reinforcement-learning experiment testing whether a plasticity intervention's benefit depends on the experience used to train it.
+**I found two individual material tape-dependent injection reversals, but neither met the unchanged material criterion after averaging both learner initializations in its structural world.** The original aggregate experiment still stops. In the saved-tape follow-up, one injected actor observed **zero** rewards from the optimal branch, while another supplied **517** such rewards and still trained its aged consumer faster than its injected consumer ([comparison](reports/tape-comparison.md), [interpretation](docs/tape-analysis.md)). Coverage alone does not explain learning.
 
-**Question:** can an intervention help on one learner's experience but hurt on another's?
+This is a small NumPy reinforcement-learning experiment asking whether an intervention can help on one learner's experience but hurt on another's. I independently implemented [Plasticity Injection](https://arxiv.org/abs/2305.15555), not a new intervention. The [float64 Double DQN](src/yoked_plasticity/learner.py) preserves initial online and target predictions at injection. A [synthetic two-branch world](src/yoked_plasticity/env.py) changes context; the [experiment](src/yoked_plasticity/experiment.py) crosses aged and injected learners with both chronological actor tapes, alongside exploration, replay, optimizer-reset and learned tabular controls.
 
-The [Double DQN implementation](src/yoked_plasticity/learner.py) uses float64 arithmetic and independently implements the published Plasticity Injection method, preserving initial online and target predictions. A [synthetic two-branch task](src/yoked_plasticity/env.py) changes its hidden context during training. The [experiment](src/yoked_plasticity/experiment.py) crosses aged and injected learners with both chronological experience tapes, alongside exploration, replay, optimizer-reset and learned tabular controls.
+## What the saved tapes show
 
-**Result: the original experiment did not find the material tape-dependent sign reversal it was designed to test.** Injection sometimes helped substantially, but that is not a new algorithm or evidence of isolated intrinsic plasticity.
+I compared both initializations in the two worlds containing the previously reported individual reversals. Gains are injected-minus-aged normalized return AUC on the same tape; A is aged actor experience and I is injected actor experience.
 
-## Results
+| World / switch | Initialization | Gain on A tape | Gain on I tape |
+|---|---:|---:|---:|
+| 404 / visible | 11 | +0.39789 | +0.41078 |
+| 404 / visible | 22 | -0.34121 | +0.20310 |
+| 606 / mixed | 11 | +0.46913 | -0.15551 |
+| 606 / mixed | 22 | -0.44099 | -0.72658 |
 
-The [development report](reports/development.md) contains the original measurements below. Each learning-rate setting used three structural seeds crossed with two learner initializations. AUC is normalized discounted greedy-return area under the adaptation curve; gains are injected minus aged learner AUC on the same tape.
+Sources: [machine-readable comparison](results/tape-comparison.json) and [saved curves and coverage tables](reports/tape-comparison.md). The script reconstructs each pair's actual context and checks all eight tapes against the simulator. Both initializations share the same anchor within each world.
 
-| Setting | Switch | Gain on aged tape | Gain on injected tape | Autonomous injection gain | Tabular AUC |
-| --- | --- | ---: | ---: | ---: | ---: |
-| A: 0.0003 | Visible | -0.02068 | -0.19874 | -0.03309 | 0.43179 |
-| A: 0.0003 | Hidden | -0.05230 | 0.00701 | 0.05470 | 0.95188 |
-| A: 0.0003 | Mixed | 0.04102 | 0.06644 | 0.13148 | 0.98272 |
-| B: 0.001 | Visible | -0.07437 | -0.04319 | 0.01458 | 0.43179 |
-| B: 0.001 | Hidden | 0.33450 | 0.44054 | 0.38832 | 0.95188 |
-| B: 0.001 | Mixed | 0.30259 | 0.40336 | 0.37433 | 0.98272 |
+In world 404/22, the aged actor completed the optimal branch 361 times; its injected counterpart never completed it. Only the aged learner on aged experience reached an optimal sampled return, from interaction 3,250 onward. In world 606/11, the injected tape completed the optimal branch 517 times, versus four on the aged tape. Yet the aged consumer of injected experience first reached the optimum at 1,500, compared with 2,250 for the injected consumer. Coverage and learner state differ together; these selected observations do not identify their causal contributions.
 
-A's hidden gains have opposite signs, but the positive gain is too small to meet the original reversal criterion. B's hidden and mixed gains are positive on both tapes. Both settings failed the original combined screening criteria; the original held-out experiment was not run. The learned tabular baseline nearly solves hidden and mixed adaptation.
+## Original result remains negative
 
-A [separate exploratory check](reports/additional-seeds.md) added structural seeds 404, 505 and 606 at B's learning rate. Hidden tape-conditioned gains were 0.33251 and 0.45349; tabular hidden/mixed AUCs were 0.97594/0.98702. No aggregate switch met the original reversal criterion, but two individual seed/initialization combinations did. This is heterogeneous evidence, not a general null or a held-out confirmation.
+The [original development report](reports/development.md) found no material aggregate reversal at either learning rate. At configuration B's rate, the [additional three-world check](reports/additional-seeds.md) had hidden tape-conditioned gains of 0.33251/0.45349 and tabular hidden/mixed AUCs of 0.97594/0.98702. No aggregate switch passed the original criterion: opposite signs, both absolute gains at least 0.05 and a gap of at least 0.15, after averaging initializations within structural clusters. I did not change those criteria or run the original held-out worlds.
 
-## Reproduce
+## Reproduce without training
 
-Use Python 3.14 and [uv](https://docs.astral.sh/uv/); dependencies are pinned in [uv.lock](uv.lock). From the repository root:
+Python 3.14 and pinned NumPy; local CPU, no GPU or paid service:
 
 ```sh
 uv sync --frozen --python /usr/bin/python3
-nice -n 19 uv run --frozen yoked-plasticity --config configs/development-b.json --output runs/reproduce-b
-sh scripts/run_seed_check.sh runs/reproduce-additional-seeds
+nice -n 19 uv run --frozen python scripts/analyze_saved_tapes.py results/additional-seeds
+nice -n 19 uv run --frozen python -m unittest discover -s tests -v
 ```
 
-Output directories must be new. Local CPU only; no GPU, external dataset or paid service. Original development settings took about 125–144 seconds each and less than 63 MB peak process memory on the recorded machine ([resource measurements](reports/development.md#actual-resource-use)); runtime varies by CPU. The CLI limits BLAS to one thread. The seed-check script runs the additional configuration and audits its outputs.
-
-Tests: `nice -n 19 uv run --frozen python -m unittest discover -s tests -v`. Historical protocols, decisions and detailed reproduction notes are kept in [docs/HANDOFF.md](docs/HANDOFF.md).
+The analysis regenerates the JSON and table from saved data, not new learning or timing measurements. [Reproduction notes](docs/HANDOFF.md) explain full training commands, artifact checks and runtime versions. [The analysis plan](docs/tape-analysis.md) records descriptive metrics chosen before computing the new summaries.
 
 ## Limitations
 
-- One small synthetic task family, not an Atari or real-world benchmark.
-- Only three structural clusters per original setting; uncertainty intervals are exploratory.
-- The learning rate affects aging and adaptation, so A/B does not isolate aging.
-- Tabular control has a favorable representation; neither its success nor neural failure establishes a general ranking.
-- Shared-code replay consistency is not independent algorithm verification; numerical gradient and terminal-target tests provide separate checks.
+- One small synthetic task family, with three structural clusters per development setting.
+- The follow-up selects two previously observed cases; it is not independent confirmation or a general null.
+- Timing uses sampled greedy returns every 250 interactions, not continuous behavior; reward observations are not replay exposure counts.
+- Initializations differ in weights, inherited replay and action streams. Shared-code consistency is not independent RL verification.
+- Tabular control has a favorable representation; its success does not establish a general learner ranking.
 
-## Prior work and attribution
+## Prior work
 
-[Tandem RL](https://arxiv.org/abs/2110.14020) motivates separating data generation from passive learning. [Plasticity Injection](https://arxiv.org/abs/2305.15555) supplies the intervention. [AltNet](https://arxiv.org/abs/2512.01034) studies reset passive networks on active trajectories and replay interactions. These methods are independently implemented, not invented here; no upstream implementation is vendored. MIT license; author: [Alp Cetin](https://github.com/mottopanikeiku). See [NOTICE.md](NOTICE.md).
+[Tandem RL](https://arxiv.org/abs/2110.14020) motivates separating data generation from passive learning. [Plasticity Injection](https://arxiv.org/abs/2305.15555) supplies the intervention. [AltNet](https://arxiv.org/abs/2512.01034) studies reset passive networks and replay interactions. No upstream code is vendored; see [NOTICE.md](NOTICE.md). MIT license.
+
+Written with AI coding assistance.
