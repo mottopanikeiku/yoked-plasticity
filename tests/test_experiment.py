@@ -8,7 +8,7 @@ import numpy as np
 
 from yoked_plasticity.env import World
 from yoked_plasticity.experiment import (
-    Replay, age, auc, consume, evaluate, generate, load_checkpoint, run_pair, save_checkpoint,
+    Replay, age, auc, consume, evaluate, generate, load_checkpoint, run_pair, save_checkpoint, transformed,
 )
 
 
@@ -121,6 +121,30 @@ class MetricTests(unittest.TestCase):
         recent = replay.recent(5)
         self.assertEqual((recent.size, recent.next_uid), (3, 3))
         np.testing.assert_array_equal(recent.batch(np.arange(3), world.embeddings)[2], [0, 1, 2])
+
+
+class InterventionTests(unittest.TestCase):
+    def test_optimizer_reset_clears_only_adam_state(self):
+        world = World(9, observation_dim=8)
+        aged = age(world, 11, config())[0]
+        before = aged.fingerprint()
+        reset = transformed(aged, 5, "optimizer_reset")
+        self.assertEqual(aged.fingerprint(), before)
+        for group in ("params", "target_params"):
+            for left, right in zip(getattr(aged, group), getattr(reset, group)):
+                np.testing.assert_array_equal(left, right)
+        self.assertTrue(any(np.any(value) for value in aged.m))
+        self.assertFalse(any(np.any(value) for value in reset.m + reset.v))
+        self.assertEqual(reset.steps, [0, 0, 0])
+
+    def test_identity_is_an_exact_copy_and_unknown_kind_is_rejected(self):
+        world = World(9, observation_dim=8)
+        aged = age(world, 11, config())[0]
+        copy = transformed(aged, 5, "identity")
+        self.assertIsNot(copy, aged)
+        self.assertEqual(copy.fingerprint(), aged.fingerprint())
+        with self.assertRaises(ValueError):
+            transformed(aged, 5, "reinitialize")
 
 
 if __name__ == "__main__":
