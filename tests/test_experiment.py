@@ -7,7 +7,9 @@ import unittest
 import numpy as np
 
 from yoked_plasticity.env import World
-from yoked_plasticity.experiment import Replay, age, consume, generate, load_checkpoint, run_pair, save_checkpoint
+from yoked_plasticity.experiment import (
+    Replay, age, auc, consume, evaluate, generate, load_checkpoint, run_pair, save_checkpoint,
+)
 
 
 def config():
@@ -76,6 +78,49 @@ class ReplayIntegrityTests(unittest.TestCase):
         self.assertEqual(result["tape_digests"]["A"], result["tape_digests"]["I"])
         for name in ("total_effect", "learner_state_effect", "generated_data_effect", "interaction"):
             self.assertEqual(result[name], 0.0)
+
+
+class FixedQ:
+    def __init__(self, q):
+        self.q = q
+        self.forward_examples = 0
+
+    def q_values(self, observations):
+        return self.q
+
+
+class MetricTests(unittest.TestCase):
+    def test_auc_is_trapezoidal_and_normalized_by_final_step(self):
+        # The last interval may be shorter than evaluate_every.
+        scores = [{"step": 0, "normalized_return": 0.0}, {"step": 4, "normalized_return": 1.0},
+                  {"step": 6, "normalized_return": 1.0}]
+        self.assertAlmostEqual(auc(scores), (4 * 0.5 + 2 * 1.0) / 6, places=15)
+        flat = [{"step": step, "normalized_return": -0.25} for step in (0, 250, 500)]
+        self.assertAlmostEqual(auc(flat), -0.25, places=15)
+
+    def test_evaluate_scores_oracle_policy_as_one_and_matches_greedy_return(self):
+        world = World(9, observation_dim=8)
+        for kind in ("visible_refit", "hidden_opportunity", "mixed"):
+            context = world.post_context(world.training_context(3), kind)
+            with self.subTest(switch=kind):
+                score, calls = evaluate(FixedQ(world.oracle(context)), world, context, 7)
+                self.assertEqual((score["step"], calls), (7, 5))
+                self.assertAlmostEqual(score["normalized_return"], 1.0, places=12)
+                zeros = np.zeros((10, 2))
+                score, _ = evaluate(FixedQ(zeros), world, context, 0)
+                self.assertEqual(score["return"], world.greedy_return(zeros, context))
+                expected = ((score["return"] - world.random_return(context))
+                            / (float(np.max(world.oracle(context)[0])) - world.random_return(context)))
+                self.assertAlmostEqual(score["normalized_return"], expected, places=15)
+
+    def test_recent_replay_keeps_everything_when_buffer_is_short(self):
+        world = World(9, observation_dim=8)
+        replay = Replay(8)
+        for uid in range(3):
+            replay.append((0, 0, float(uid), 1, False))
+        recent = replay.recent(5)
+        self.assertEqual((recent.size, recent.next_uid), (3, 3))
+        np.testing.assert_array_equal(recent.batch(np.arange(3), world.embeddings)[2], [0, 1, 2])
 
 
 if __name__ == "__main__":
