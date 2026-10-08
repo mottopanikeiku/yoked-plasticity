@@ -28,6 +28,8 @@ nice -n 19 uv run --frozen python tools/verify_artifacts.py results/development-
 
 Exact semantic equality was demonstrated on the recorded runtime, not across every CPU or BLAS build. The manifests contain runtime versions. Reproducing a trace is not an independent sample.
 
+On Linux aarch64 (Python 3.14.7, NumPy 2.3.5 wheel, one BLAS thread), `sh scripts/run_seed_check.sh` reproduced every score, AUC, effect, interval, gate, work count and saved tape transition/replay schedule of `results/additional-seeds` exactly, in 221 s. Only the 168 learner-state fingerprints differed: aged checkpoint arrays differ by at most 4e-9, so `verify_artifacts.py --compare` reports a `semantic_sha256` mismatch although every recorded measurement is identical.
+
 ## Files behind the results
 
 - `results/development-a-v2` and `results/development-b-v2`: development runs after adding the step-zero diagonal-score check.
