@@ -28,7 +28,7 @@ The [original development report](reports/development.md) found no material aggr
 Python 3.14 and pinned NumPy; local CPU, no GPU or paid service:
 
 ```sh
-uv sync --frozen --python /usr/bin/python3
+uv sync --frozen --python 3.14
 nice -n 19 uv run --frozen python scripts/analyze_saved_tapes.py results/additional-seeds
 nice -n 19 uv run --frozen python -m unittest discover -s tests -v
 ```

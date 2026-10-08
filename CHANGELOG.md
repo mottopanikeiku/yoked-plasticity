@@ -7,6 +7,9 @@
 - Added a separately planned structural-seed check with configuration B unchanged apart from the new structural seeds. Aggregate means missed the material reversal criterion; two individual seed/initialization combinations met its sign and magnitude conditions. Preserved full outputs and reported the heterogeneity.
 - Compared saved branch coverage and adaptation timing for both initializations in the two worlds with individual reversals. Preserved the original aggregate criteria and all saved training outputs.
 - Replaced successor-agent instructions with plain reproduction notes and added CPU-only CI for the learner and saved-data analysis.
+- Fixed setup commands that pinned `/usr/bin/python3`, which is not Python 3.14 on most hosts.
+- Added tests that regenerate the committed work-count reports and check README/report tables against saved results, plus direct tests for AUC, evaluation normalization and the optimizer-reset control. CI now audits every committed run directory, with actions pinned to commit SHAs.
+- Recorded an aarch64 rerun of the additional-seed check: identical measurements, different weight fingerprints.
 
 ## 0.1.0
 
