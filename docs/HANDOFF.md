@@ -7,7 +7,7 @@ I stopped the original positive thesis after both development configurations mis
 I used Python 3.14 and NumPy 2.3.5, pinned in `uv.lock`. The CLI sets BLAS threads to one before importing NumPy. No GPU, external dataset, model call or paid service is needed.
 
 ```sh
-uv sync --frozen --python /usr/bin/python3
+uv sync --frozen --python 3.14
 nice -n 19 uv run --frozen python -m unittest discover -s tests -v
 ```
 
